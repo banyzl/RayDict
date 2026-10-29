@@ -1,0 +1,5 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.zip binary
+raycast-env.d.ts linguist-generated=true whitespace=-blank-at-eof

@@ -1,0 +1,21 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+/assets/RayDict Settings.app/
+/assets/settings-catalog.json
+
+# Local credentials and user data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+settings-v1.json
+notebook-v1/
+history-v1/
+
+# Machine and editor files
+.DS_Store
+*.log
+.vscode/
+.idea/

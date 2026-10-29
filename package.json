@@ -1,0 +1,208 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "raydict-native",
+  "title": "RayDict",
+  "description": "A browser-independent native dictionary with parallel providers, profiles and a vocabulary notebook.",
+  "icon": "icon.png",
+  "author": "local-developer",
+  "license": "MIT",
+  "version": "0.4.0",
+  "private": true,
+  "platforms": [
+    "macOS"
+  ],
+  "categories": [
+    "Education",
+    "Productivity"
+  ],
+  "commands": [
+    {
+      "name": "search",
+      "title": "查词 / Search",
+      "subtitle": "RayDict",
+      "description": "Search enabled dictionary providers in parallel.",
+      "mode": "view",
+      "arguments": [
+        {
+          "name": "query",
+          "type": "text",
+          "placeholder": "单词或句子（可留空）",
+          "required": false
+        }
+      ]
+    },
+    {
+      "name": "lookup-selected",
+      "title": "查询选中文字",
+      "subtitle": "RayDict",
+      "description": "Look up selected text, with a menu-copy compatibility fallback for WeChat.",
+      "mode": "view"
+    },
+    {
+      "name": "lookup-copy",
+      "title": "兼容取词（复制选区）",
+      "subtitle": "RayDict",
+      "description": "Copy the selected text through the original app menu, restore the clipboard and look it up.",
+      "mode": "no-view"
+    },
+    {
+      "name": "lookup-clipboard",
+      "title": "剪贴板查词",
+      "subtitle": "RayDict",
+      "description": "Preview copied text before querying, for WeChat and apps without selection access.",
+      "mode": "view"
+    },
+    {
+      "name": "manage-providers",
+      "title": "管理词典与情景模式",
+      "subtitle": "RayDict",
+      "description": "Open the native settings window to manage dictionaries and profiles.",
+      "mode": "no-view"
+    },
+    {
+      "name": "notebook",
+      "title": "生词本",
+      "subtitle": "RayDict",
+      "description": "Review saved words, contexts and notes, or send them to Anki.",
+      "mode": "view"
+    },
+    {
+      "name": "history",
+      "title": "查词历史",
+      "subtitle": "RayDict",
+      "description": "Revisit and delete recent lookups.",
+      "mode": "view"
+    },
+    {
+      "name": "settings",
+      "title": "词典设置窗口",
+      "subtitle": "RayDict",
+      "description": "Open the separate native macOS settings window.",
+      "mode": "no-view"
+    },
+    {
+      "name": "api-settings",
+      "title": "API 密钥设置",
+      "subtitle": "RayDict",
+      "description": "Open API credential settings.",
+      "mode": "no-view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "recordHistory",
+      "type": "checkbox",
+      "label": "保存查词历史",
+      "title": "本地历史",
+      "description": "在本机保存查询和手动添加的上下文，可在历史命令中清空。",
+      "default": true,
+      "required": false
+    },
+    {
+      "name": "deeplKey",
+      "type": "password",
+      "title": "DeepL API Key",
+      "description": "可选。仅在手动运行 DeepL 时使用；:fx 密钥使用 Free 端点。",
+      "required": false
+    },
+    {
+      "name": "apiToken1",
+      "type": "password",
+      "title": "自定义 API 密钥 1",
+      "description": "由自定义 Provider 的 token slot 1 引用。",
+      "required": false
+    },
+    {
+      "name": "apiToken2",
+      "type": "password",
+      "title": "自定义 API 密钥 2",
+      "description": "由自定义 Provider 的 token slot 2 引用。",
+      "required": false
+    },
+    {
+      "name": "apiToken3",
+      "type": "password",
+      "title": "自定义 API 密钥 3",
+      "description": "由自定义 Provider 的 token slot 3 引用。",
+      "required": false
+    },
+    {
+      "name": "ankiEndpoint",
+      "type": "textfield",
+      "title": "AnkiConnect 地址",
+      "description": "仅支持本机回环地址。需要安装 AnkiConnect 并运行 Anki。",
+      "default": "http://127.0.0.1:8765",
+      "required": false
+    },
+    {
+      "name": "ankiKey",
+      "type": "password",
+      "title": "AnkiConnect API Key",
+      "description": "可选，与 AnkiConnect 配置中的 apiKey 一致。",
+      "required": false
+    },
+    {
+      "name": "ankiDeck",
+      "type": "textfield",
+      "title": "Anki 牌组",
+      "description": "使用已存在的牌组。",
+      "default": "Default",
+      "required": false
+    },
+    {
+      "name": "ankiModel",
+      "type": "textfield",
+      "title": "Anki 笔记类型",
+      "description": "必须包含下列正面和背面字段。",
+      "default": "Basic",
+      "required": false
+    },
+    {
+      "name": "ankiFront",
+      "type": "textfield",
+      "title": "Anki 正面字段",
+      "default": "Front",
+      "description": "笔记类型中的准确字段名。",
+      "required": false
+    },
+    {
+      "name": "ankiBack",
+      "type": "textfield",
+      "title": "Anki 背面字段",
+      "default": "Back",
+      "description": "笔记类型中的准确字段名。",
+      "required": false
+    }
+  ],
+  "scripts": {
+    "dev": "npm run build:settings && ray develop",
+    "build": "npm run build:settings && ray build -e dist -o dist",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . && prettier --check src tests scripts examples package.json tsconfig.json eslint.config.mjs",
+    "format": "prettier --write src tests scripts examples package.json tsconfig.json eslint.config.mjs",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "smoke": "node --import tsx scripts/smoke.ts",
+    "check": "npm run typecheck && npm test && npm run lint && npm run build && node --import tsx scripts/test-native.mjs",
+    "build:settings": "node --import tsx scripts/export-settings.ts && node scripts/build-settings.mjs",
+    "test:native": "npm run build:settings && node --import tsx scripts/test-native.mjs",
+    "install:local": "npm run build:settings && ray build -e dist",
+    "update:local": "npm run install:local"
+  },
+  "dependencies": {
+    "@raycast/api": "2.9.0",
+    "cheerio": "^1.2.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "2.2.0",
+    "@types/node": "^22.19.0",
+    "@types/react": "19.0.10",
+    "eslint": "^10.0.0",
+    "prettier": "^3.9.0",
+    "tsx": "^4.23.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.22.2"
+  }
+}
