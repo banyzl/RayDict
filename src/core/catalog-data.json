@@ -1,0 +1,195 @@
+[
+  {
+    "config": {
+      "id": "youdao",
+      "name": "网易有道词典",
+      "kind": "youdao",
+      "scope": "word"
+    },
+    "category": "英汉词典",
+    "description": "英汉释义、英美音标与发音、双语例句。直接读取公开词条页。",
+    "icon": "character.book.closed",
+    "website": "https://dict.youdao.com/",
+    "access": "网页接入"
+  },
+  {
+    "config": {
+      "id": "cambridge",
+      "name": "剑桥英汉词典",
+      "kind": "cambridge",
+      "scope": "word",
+      "inputLanguage": "latin",
+      "language": "zh"
+    },
+    "category": "学习词典",
+    "description": "剑桥简体中文双语词典，提供英文释义、中文翻译与例句。",
+    "icon": "graduationcap",
+    "website": "https://dictionary.cambridge.org/",
+    "access": "网页接入"
+  },
+  {
+    "config": {
+      "id": "zdic",
+      "name": "汉典",
+      "kind": "zdic",
+      "scope": "word",
+      "inputLanguage": "han"
+    },
+    "category": "汉语词典",
+    "description": "汉字与词语的拼音、基本解释、详细解释。",
+    "icon": "character.zh",
+    "website": "https://zdic.net/",
+    "access": "网页接入"
+  },
+  {
+    "config": {
+      "id": "wikipedia",
+      "name": "维基百科",
+      "kind": "wikipedia",
+      "scope": "word",
+      "language": "auto"
+    },
+    "category": "百科",
+    "description": "按查询文字自动选择中文或英文百科，显示词条导言与来源。",
+    "icon": "globe",
+    "website": "https://www.wikipedia.org/",
+    "access": "公开 API"
+  },
+  {
+    "config": {
+      "id": "free-dictionary",
+      "name": "Free Dictionary",
+      "kind": "dictionaryapi",
+      "scope": "word",
+      "inputLanguage": "latin"
+    },
+    "category": "英语词典",
+    "description": "免费的英英词典，提供音标、释义、例句和部分词条发音。",
+    "icon": "book",
+    "website": "https://dictionaryapi.dev/",
+    "access": "公开 API"
+  },
+  {
+    "config": {
+      "id": "cs-glossary",
+      "name": "计算机术语 · 本地",
+      "kind": "glossary",
+      "scope": "word"
+    },
+    "category": "本地词典",
+    "description": "20 个原创计算机术语笔记，不需要联网。",
+    "icon": "desktopcomputer",
+    "website": "",
+    "access": "离线"
+  },
+  {
+    "config": {
+      "id": "mymemory",
+      "name": "MyMemory 翻译",
+      "kind": "mymemory",
+      "trigger": "manual"
+    },
+    "category": "翻译",
+    "description": "无需密钥的短句翻译，语言跟随情景模式；受服务额度限制。",
+    "icon": "character.bubble",
+    "website": "https://mymemory.translated.net/",
+    "access": "公开 API"
+  },
+  {
+    "config": {
+      "id": "deepl",
+      "name": "DeepL 翻译",
+      "kind": "deepl",
+      "trigger": "manual"
+    },
+    "category": "翻译",
+    "description": "使用自己的 DeepL API Key 翻译。",
+    "icon": "character.bubble.fill",
+    "website": "https://www.deepl.com/",
+    "access": "需要密钥"
+  },
+  {
+    "config": {
+      "id": "raycast-ai",
+      "name": "AI 语境解释",
+      "kind": "ai",
+      "trigger": "manual",
+      "timeoutMs": 45000
+    },
+    "category": "AI",
+    "description": "按情景模式解释含义、术语与例句，需要 Raycast AI 权限。",
+    "icon": "sparkles",
+    "website": "",
+    "access": "账户权限"
+  },
+  {
+    "config": {
+      "id": "bing",
+      "name": "必应词典",
+      "kind": "bing",
+      "scope": "word",
+      "inputLanguage": "any"
+    },
+    "category": "英汉词典",
+    "description": "英汉释义、英美音标和双语例句。",
+    "icon": "character.book.closed",
+    "website": "https://cn.bing.com/dict/",
+    "access": "网页接入"
+  },
+  {
+    "config": {
+      "id": "dictcn",
+      "name": "海词词典",
+      "kind": "dictcn",
+      "scope": "word",
+      "inputLanguage": "any"
+    },
+    "category": "英汉词典",
+    "description": "英汉释义、英英解释、音标与常见例句。",
+    "icon": "book.closed",
+    "website": "https://dict.cn/",
+    "access": "网页接入"
+  },
+  {
+    "config": {
+      "id": "oxford",
+      "name": "牛津高阶学习词典",
+      "kind": "oxford",
+      "scope": "word",
+      "inputLanguage": "latin"
+    },
+    "category": "学习词典",
+    "description": "Oxford Advanced Learner’s Dictionary：英英释义、用法例句与英美发音。",
+    "icon": "graduationcap",
+    "website": "https://www.oxfordlearnersdictionaries.com/",
+    "access": "网页接入"
+  },
+  {
+    "config": {
+      "id": "longman",
+      "name": "朗文当代英语词典",
+      "kind": "longman",
+      "scope": "word",
+      "inputLanguage": "latin"
+    },
+    "category": "学习词典",
+    "description": "Longman Dictionary of Contemporary English：英英释义、例句和发音。",
+    "icon": "books.vertical",
+    "website": "https://www.ldoceonline.com/",
+    "access": "网页接入"
+  },
+  {
+    "config": {
+      "id": "wiktionary",
+      "name": "维基词典 · 英语",
+      "kind": "wiktionary",
+      "scope": "word",
+      "inputLanguage": "latin"
+    },
+    "category": "英语词典",
+    "description": "维基词典的英语释义与例句，保留原词条和许可链接。",
+    "icon": "globe",
+    "website": "https://en.wiktionary.org/",
+    "access": "公开 API"
+  }
+]
