@@ -1,0 +1,22 @@
+{
+  "id": "example-json",
+  "name": "示例 JSON 词典（需替换 API）",
+  "kind": "json",
+  "trigger": "manual",
+  "scope": "any",
+  "endpoint": "https://api.example.com/dictionary?q={word}&target={target}",
+  "method": "GET",
+  "tokenSlot": "1",
+  "headers": { "Authorization": "Bearer {token}" },
+  "mapping": {
+    "entries": "data.entries",
+    "headword": "word",
+    "definition": "definitions[].text",
+    "phonetic": "phonetic",
+    "partOfSpeech": "partOfSpeech",
+    "example": "examples[]",
+    "audio": "audio"
+  },
+  "attribution": "请填写数据源和许可证",
+  "attributionUrl": "https://example.com/license"
+}
